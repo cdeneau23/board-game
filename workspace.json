@@ -2,6 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "board-game": "apps/board-game"
+    "board-game": "apps/board-game",
+    "cards": "apps/cards",
+    "cards-e2e": "apps/cards-e2e",
+    "contentful-integration": "apps/contentful-integration"
   }
 }
