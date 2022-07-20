@@ -1,6 +1,7 @@
 import { ContentfulClientApi, Entry } from 'contentful';
+import { ContentfulContext } from '../interfaces/contentful-fetcher';
 
-export const ContentfulFetcher = (client: ContentfulClientApi) => {
+export function ContfulContext(client: ContentfulClientApi): ContentfulContext {
 
   async function getEntryById<EntryType, Type>(id: string, mapper: (entry: Entry<EntryType>) => Type) {
     const entry = await client.getEntry<EntryType>(id);
@@ -19,4 +20,4 @@ export const ContentfulFetcher = (client: ContentfulClientApi) => {
     getEntryById,
     getAllEntriesByType
   };
-};
+}

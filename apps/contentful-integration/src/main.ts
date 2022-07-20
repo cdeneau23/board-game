@@ -5,19 +5,18 @@
 
 import * as express from 'express';
 import { client } from './app/contentful-loader/conteful-loader';
-import { ContentfulFetcher } from './app/contentful-mapper/contentful-mapper';
-import { ContentfulTypeMapper } from './app/model-mappers';
-import { Card, CardEntry } from './app/types/card';
+import { ContfulContext } from './app/contentful-mapper/contentful-context';
+import { CardController } from './app/controllers/card.controller';
 
 const app = express();
 
-app.get('/api', async (req, res) => {
-  const entry = await ContentfulFetcher(client).getAllEntriesByType<CardEntry, Card>(
-    'card',
-    ContentfulTypeMapper.cardMapper
-  );
-  res.send(entry);
-});
+app.use('/api/:id', async (req, res) =>
+  CardController(ContfulContext(client)).getCardById(req, res)
+);
+
+app.use('/api', async (req, res) =>
+  CardController(ContfulContext(client)).getAllCard(req, res)
+);
 
 const port = process.env.PORT || 3333;
 
