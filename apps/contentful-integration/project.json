@@ -1,0 +1,57 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/contentful-integration/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/contentful-integration",
+        "main": "apps/contentful-integration/src/main.ts",
+        "tsConfig": "apps/contentful-integration/tsconfig.app.json",
+        "assets": ["apps/contentful-integration/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/contentful-integration/src/environments/environment.ts",
+              "with": "apps/contentful-integration/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "contentful-integration:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "contentful-integration:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/contentful-integration/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/contentful-integration"],
+      "options": {
+        "jestConfig": "apps/contentful-integration/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
