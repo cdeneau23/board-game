@@ -6,13 +6,22 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button } from '@mui/material';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 /* eslint-disable-next-line */
 export interface NavigationBarProps {}
-
-const pages = ['Home', 'Cards', 'Play'];
+type NavigationProp = { title: string; path: string };
+const pages: NavigationProp[] = [
+  { title: 'Home', path: '/' },
+  { title: 'Game', path: '/game' },
+  { title: 'Cards', path: '/cards' },
+];
 
 export function NavigationBar(props: NavigationBarProps) {
+  const navigate = useNavigate();
+  function handleClick(item: NavigationProp) {
+    navigate(item.path);
+  }
   return (
     <>
       <Box sx={{ display: 'flex' }}>
@@ -35,15 +44,22 @@ export function NavigationBar(props: NavigationBarProps) {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {pages.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
+                <Button
+                  onClick={() => {
+                    handleClick(item);
+                  }}
+                  sx={{ my: 2, color: 'white'}}
+                >
+                  {item.title}
                 </Button>
+                // <Link to={`/${item.path}`}>{item.title}</Link>
               ))}
             </Box>
           </Toolbar>
         </AppBar>
       </Box>
       <Toolbar></Toolbar>
+      <Outlet />
     </>
   );
 }

@@ -1,8 +1,10 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-
-import App from './app/app';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CardPage from './app/card-page/card-page';
+import GamePage from './app/game-page/game-page';
+import HomePage from './app/home-page/home-page';
+import NavigationBar from './app/navigation-bar/navigation-bar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,7 +12,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <NavigationBar></NavigationBar>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cards" element={<CardPage />} />
+        <Route path="/game" element={<GamePage />} />
+      </Routes>
     </BrowserRouter>
   </StrictMode>
 );
