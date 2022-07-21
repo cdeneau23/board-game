@@ -52,7 +52,6 @@ export function NavigationBar(props: NavigationBarProps) {
                 >
                   {item.title}
                 </Button>
-                // <Link to={`/${item.path}`}>{item.title}</Link>
               ))}
             </Box>
           </Toolbar>
