@@ -1,7 +1,8 @@
 import * as express from 'express';
 import { ContentfulContext } from '../interfaces/contentful-fetcher';
 import { ContentfulTypeMapper } from '../model-mappers';
-import { Card, CardEntry } from '../types/card';
+import { Card, CardEntry} from '@two-dogs-studios/card';
+
 
 export const CardController = (contentfulContext: ContentfulContext) => {
   async function getCardById(req: express.Request, res: express.Response) {

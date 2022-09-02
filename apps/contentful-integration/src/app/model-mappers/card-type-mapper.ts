@@ -1,5 +1,5 @@
+import { CardType } from '@two-dogs-studios/card';
 import { Entry } from 'contentful';
-import { CardType } from '../types/card-type';
 
 export function cardTypeMapper(entry: Entry<CardType>): CardType {
   return {

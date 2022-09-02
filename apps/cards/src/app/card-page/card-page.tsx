@@ -1,7 +1,8 @@
 import { Divider, Stack } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { CardDisplay } from '../card/card';
-import { Card, CardService } from '../services/card.service';
+import { CardService } from '../services/card.service';
+import { Card } from '@two-dogs-studios/card';
 import styles from './card-page.module.scss';
 
 /* eslint-disable-next-line */

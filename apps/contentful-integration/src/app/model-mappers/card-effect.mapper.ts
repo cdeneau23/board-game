@@ -1,5 +1,5 @@
+import { CardEffect } from '@two-dogs-studios/card';
 import { Entry } from 'contentful';
-import { CardEffect } from '../types/card-effect';
 
 export function cardEffectMapper(entry: Entry<CardEffect>) {
   return {
