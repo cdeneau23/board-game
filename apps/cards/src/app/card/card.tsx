@@ -29,8 +29,15 @@ export interface CardProps {
 export function CardDisplay(props: CardProps) {
   return (
     <div className="card">
-      <div className="card-title"> {props.title} </div>
-      <div className="card-description">{props.description}</div>
+      <div className="card-title">
+        {' '}
+        <p className='mr-sm ml-sm mt-0 mb-0'>{props.title}</p>{' '}
+      </div>
+      <div className="card-image"></div>
+      <div className="card-description">
+        {' '}
+        <p className='mr-sm ml-sm mt-0 mb-0'>{props.description}</p>
+      </div>
     </div>
   );
 }
