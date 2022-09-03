@@ -1,9 +1,13 @@
 FROM node:18
-COPY ../dist/apps/api .
-ENV PORT=3333
 
 # Create app directory
 WORKDIR /usr/src/app
+
+COPY dist/apps/contentful-integration .
+ENV PORT=3000
+ENV CONTENTFUL_SPACE="l1dczkanjcjw"
+ENV CONTENTFUL_TOKEN="T5mReKJzgc1KE3c27YhKTySXF7xTjplmOhkxuo1a2qw"
+
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -17,5 +21,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+EXPOSE ${PORT}
+CMD [ "node", "main.js" ]

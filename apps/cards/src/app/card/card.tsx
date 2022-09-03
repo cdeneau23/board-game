@@ -6,6 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import styles from './card.module.scss';
+import './card.module.scss'
 
 type CardType = {
   name: string;
@@ -45,6 +46,10 @@ export function CardDisplay(props: CardProps) {
         </CardContent>
       </CardActionArea>
     </Card>
+
+    // <div className='card'>
+
+    // </div>
   );
 }
 

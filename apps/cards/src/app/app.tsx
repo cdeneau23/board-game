@@ -16,19 +16,6 @@ export function App() {
         </Routes>
       </BrowserRouter>
     </>
-    // <Router>
-    //   <Routes>
-    //     <Route path="/cards">
-    //       <CardPage/>
-    //     </Route>
-    //     <Route path="/game">
-    //       <GamePage/>
-    //     </Route>
-    //     <Route path="/">
-    //       <HomePage/>
-    //     </Route>
-    //   </Routes>
-    // </Router>
   );
 }
 

@@ -10,7 +10,8 @@
         "outputPath": "dist/apps/contentful-integration",
         "main": "apps/contentful-integration/src/main.ts",
         "tsConfig": "apps/contentful-integration/tsconfig.app.json",
-        "assets": ["apps/contentful-integration/src/assets"]
+        "assets": ["apps/contentful-integration/src/assets"],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
