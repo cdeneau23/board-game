@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import styles from './card.module.scss';
-import './card.module.scss'
+import './card.module.scss';
 
 type CardType = {
   name: string;
@@ -28,28 +28,10 @@ export interface CardProps {
 
 export function CardDisplay(props: CardProps) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        {/* <CardMedia
-          component="img"
-          height="140"
-          image={props.image}
-          alt="green iguana"
-        /> */}
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
-    // <div className='card'>
-
-    // </div>
+    <div className="card">
+      <div className="card-title"> {props.title} </div>
+      <div className="card-description">{props.description}</div>
+    </div>
   );
 }
 

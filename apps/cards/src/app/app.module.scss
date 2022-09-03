@@ -1,1 +1,25 @@
-/* Your styles goes here. */
+@import './styles/colors.scss';
+html {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+body {
+  margin: 0;
+  background-color: $main-background;
+}
+
+h1 {
+  color: $primary;
+}
+.center {
+  text-align: center;
+}
+.container {
+  margin: 2rem;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+}

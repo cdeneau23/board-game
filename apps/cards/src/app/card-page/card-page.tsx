@@ -4,6 +4,7 @@ import { CardDisplay } from '../card/card';
 import { CardService } from '../services/card.service';
 import { Card } from '@two-dogs-studios/card';
 import styles from './card-page.module.scss';
+import Subheader from '../subheader/subheader';
 
 /* eslint-disable-next-line */
 export interface CardPageProps {}
@@ -33,23 +34,25 @@ export function CardPage(props: CardPageProps) {
       return null;
     }
     return (
-      <Stack
-        direction="row"
-        spacing={2}
-        justifyContent="center"
-        alignItems="center"
-        divider={<Divider orientation="vertical" flexItem />}
-      >
-        {appState.cards.map((x) => (
-          <CardDisplay {...x} />
-        ))}
-      </Stack>
+      // <Stack
+      //   direction="row"
+      //   spacing={2}
+      //   justifyContent="center"
+      //   alignItems="center"
+      //   divider={<Divider orientation="vertical" flexItem />}
+      // >
+      //   {appState.cards.map((x) => (
+      //     <CardDisplay {...x} />
+      //   ))}
+      // </Stack>
+
+      appState.cards.map((x) => <CardDisplay {...x} />)
     );
   };
   return (
     <div className={styles['container']}>
-      <h1>Welcome to CardPage!</h1>
-      {displayCards()}
+      <Subheader title="Card List"></Subheader>
+      <div className="container flex-wrap">{displayCards()}</div>
     </div>
   );
 }

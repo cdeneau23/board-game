@@ -5,8 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button } from '@mui/material';
+import { Button, ThemeProvider } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { theme } from '../theme';
 
 /* eslint-disable-next-line */
 export interface NavigationBarProps {}
@@ -23,9 +24,9 @@ export function NavigationBar(props: NavigationBarProps) {
     navigate(item.path);
   }
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex' }}>
-        <AppBar component="nav">
+        <AppBar component="nav" color="primary">
           <Toolbar>
             <IconButton
               color="inherit"
@@ -59,7 +60,8 @@ export function NavigationBar(props: NavigationBarProps) {
       </Box>
       <Toolbar></Toolbar>
       <Outlet />
-    </>
+
+    </ThemeProvider>
   );
 }
 

@@ -3,10 +3,12 @@ import NavigationBar from './navigation-bar/navigation-bar';
 import HomePage from './home-page/home-page';
 import CardPage from './card-page/card-page';
 import GamePage from './game-page/game-page';
+import { ThemeProvider } from '@emotion/react';
+import { theme } from './theme';
 
 export function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <NavigationBar></NavigationBar>
       <BrowserRouter>
         <Routes>
@@ -15,7 +17,7 @@ export function App() {
           <Route path="/game" element={<GamePage />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </ThemeProvider>
   );
 }
 
