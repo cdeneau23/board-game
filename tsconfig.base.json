@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@two-dogs-studios/api-models": ["libs/api-models/src/index.ts"],
       "@two-dogs-studios/card": ["libs/card/src/index.ts"]
     }
   },

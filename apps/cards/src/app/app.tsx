@@ -6,6 +6,7 @@ import GamePage from './game-page/game-page';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from './theme';
 
+
 export function App() {
   return (
     <ThemeProvider theme={theme}>

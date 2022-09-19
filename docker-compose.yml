@@ -3,4 +3,8 @@ services:
   contentful-integration:
     image: contentful-integration
     ports:
-      - 3000:3000
+      - "3000:3000"
+  cards:
+    image: cards
+    ports: 
+      - 4200:4200
