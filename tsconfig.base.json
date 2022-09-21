@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@two-dogs-studios/api-models": ["libs/api-models/src/index.ts"],
-      "@two-dogs-studios/card": ["libs/card/src/index.ts"]
+      "@two-dogs-studios/card": ["libs/card/src/index.ts"],
+      "@two-dogs-studios/url-shorter": ["libs/url-shorter/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

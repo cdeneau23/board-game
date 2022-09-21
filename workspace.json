@@ -8,6 +8,8 @@
     "cards": "apps/cards",
     "cards-e2e": "apps/cards-e2e",
     "contentful-integration": "apps/contentful-integration",
-    "qr-codes": "apps/qr-codes"
+    "qr-codes": "apps/qr-codes",
+    "short-url-api": "apps/short-url-api",
+    "url-shorter": "libs/url-shorter"
   }
 }

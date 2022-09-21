@@ -33,6 +33,6 @@ export function QrCodesController(service: QrCodeService = QrCodesService) {
     getOneQrCode,
     createNewQrCode,
     updateOneQrCode,
-    deleteOneQrCode,
+    deleteOneQrCode
   };
 }
