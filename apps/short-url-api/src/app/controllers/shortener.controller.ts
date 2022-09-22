@@ -11,7 +11,8 @@ export function ShortUrlController(
   };
 
   const getOneShortUrl = async (req: Request, res: Response) => {
-    const code = await service.getOneShortUrl();
+    const { id } = req.params;
+    const code = await service.getOneShortUrl(id);
     return res.send(code);
   };
 
@@ -22,12 +23,14 @@ export function ShortUrlController(
   };
 
   const updateOneShortUrl = async (req: Request, res: Response) => {
-    const code = await service.updateOneShortUrl();
+    const { id } = req.params;
+    const code = await service.updateOneShortUrl(id, req.body);
     return res.send(code);
   };
 
   const deleteOneShortUrl = async (req: Request, res: Response) => {
-    const code = await service.deleteOneShortUrl();
+    const { id } = req.params;
+    const code = await service.deleteOneShortUrl(id);
     return res.send(code);
   };
 

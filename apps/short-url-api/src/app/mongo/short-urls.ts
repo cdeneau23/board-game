@@ -1,17 +1,15 @@
 import mongoose = require('mongoose');
 
-export type ShortUrlDto = {
-  urlCode: string;
-  longUrl: string;
-  shortUrl: string;
-  date: Date;
-};
 // instantiate a mongoose schema
 const URLSchema = new mongoose.Schema({
   urlCode: String,
   longUrl: String,
   shortUrl: String,
-  date: {
+  createdOn: {
+    type: String,
+    default: Date.now,
+  },
+  modifiedOn: {
     type: String,
     default: Date.now,
   },

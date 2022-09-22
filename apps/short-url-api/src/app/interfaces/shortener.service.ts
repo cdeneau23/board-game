@@ -1,13 +1,14 @@
 import { ApiResponse } from '@two-dogs-studios/api-models';
+import { ShortUrlDto, UpdateShortUrlRequest } from '@two-dogs-studios/url-shorter';
 
 export interface ShortUrlService {
-  getAllShortUrls(): Promise<ApiResponse<string>>;
+  getAllShortUrls(): Promise<ApiResponse<ShortUrlDto[]>>;
 
-  getOneShortUrl(): Promise<ApiResponse<string>>;
+  getOneShortUrl(id: string): Promise<ApiResponse<ShortUrlDto>>;
 
-  createNewShortUrl(longUrl: string): Promise<ApiResponse<string>>;
+  createNewShortUrl(longUrl: string): Promise<ApiResponse<ShortUrlDto>>;
 
-  updateOneShortUrl(): Promise<ApiResponse<string>>;
+  updateOneShortUrl(id: string, datum: UpdateShortUrlRequest): Promise<ApiResponse<ShortUrlDto>>;
 
-  deleteOneShortUrl(): Promise<ApiResponse<string>>;
+  deleteOneShortUrl(id: string): Promise<ApiResponse<boolean>>;
 }
