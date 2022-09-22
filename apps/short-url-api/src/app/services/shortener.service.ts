@@ -47,7 +47,7 @@ const createNewShortUrl = async (
   longUrl: string
 ): Promise<ApiResponse<ShortUrlDto>> => {
   try {
-    const shortUrl = shortenUrl('http://localhost:3333', 'https://google.com');
+    const shortUrl = shortenUrl(process.env.BASE_SHORT_URL, longUrl);
     const urlData = {
       longUrl: longUrl,
       shortUrl: shortUrl.shortUrl,
